@@ -1,6 +1,8 @@
 'use client'
 import { Icons } from '@/components/ui/icons'
 import { PRIMARY_MENU } from '@/constants'
+import { type IndicatorsObjeItem } from '@/types'
+import Link from 'next/link'
 import { useState } from 'react'
 
 const NavBar = () => {
@@ -9,18 +11,21 @@ const NavBar = () => {
     <nav className='ml-auto flex items-center justify-center'>
       <ul className='flex gap-4'>
         {
-          Object.values(PRIMARY_MENU).map((item, index) => {
-            if (typeof item === 'string') {
+          Object.entries(PRIMARY_MENU).map((item) => {
+            const [keyMainObj, valMainObj] = item
+            if (typeof valMainObj === 'string') {
               return (
-                <li key={index} className='text-white text-sm font-normal'>
-                  {
-                    item
-                  }
+                <li key={keyMainObj} className='text-white text-sm font-normal'>
+                  <Link href={`/${keyMainObj}`}>
+                    {
+                      valMainObj
+                    }
+                  </Link>
                 </li>
               )
             } else {
               return (
-                <li key={index} className='text-white text-sm cursor-pointer' onClick={() => { setIsShow(!isShow) }}>
+                <li key={keyMainObj} className='text-white text-sm cursor-pointer' onClick={() => { setIsShow(!isShow) }}>
                   <div className='flex items-center justify-center'>
                     <span>Indicadores</span>
                     <div>
@@ -39,12 +44,15 @@ const NavBar = () => {
                     isShow && (
                       <ul className='absolute flex flex-col z-10 bg-primary px-2 py-4 gap-3'>
                         {
-                          Object.values(item).map((subItem, index) => {
+                          Object.entries(valMainObj).map((subItem) => {
+                            const [keyObj, valObj] = subItem
                             return (
-                              <li key={index} className='text-white text-sm font-normal'>
+                              <li key={keyObj} className='text-white text-sm font-normal'>
+                                <Link href={`/indicators/${keyObj}`}>
                                 {
-                                  subItem
+                                  valObj as IndicatorsObjeItem
                                 }
+                              </Link>
                               </li>
                             )
                           })
