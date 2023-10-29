@@ -20,7 +20,9 @@ const config: Config = {
         secondary: '#13322B',
         third: '#6A1B31',
         fourth: '#BC955C',
-        'dark-text': '#111827'
+        'dark-text': '#111827',
+        'highlight-text': '#6A1B31',
+        paragraph: '#6B7280'
       }
     }
   },

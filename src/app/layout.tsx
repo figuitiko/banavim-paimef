@@ -19,7 +19,7 @@ export default function RootLayout ({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <main>
+        <main className='flex flex-col max-w-[1142px] m-auto py-6'>
           {children}
         </main>
         </body>
