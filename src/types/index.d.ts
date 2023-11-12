@@ -1,4 +1,3 @@
-import { type } from 'os';
 // import { type Icons } from '@/components/ui/icons'
 import { type PRIMARY_MENU, type COLORS } from '../constants'
 import type React from 'react'
@@ -25,3 +24,10 @@ export type NavBarProps = {
 
 export type IndicatorsObj = typeof PRIMARY_MENU['indicators']
 export type IndicatorsObjeItem = typeof IndicatorsObj[keyof IndicatorsObj]
+
+export type User = {
+  name: string
+  email: string
+  id: string
+}
+export type BoxUserInfoProps = Pick<User, 'name' | 'email'>

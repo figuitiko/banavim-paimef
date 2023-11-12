@@ -1,0 +1,115 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String? 
+  password String
+}
+
+model ViolenceCase {
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  location String
+  date DateTime
+  isOrganizedCrime Boolean
+  hasOrderOfProtection Boolean  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  violenceTypeId Int
+  violenceType ViolenceType @relation(fields: [violenceTypeId], references: [id])
+  crimeTypeId Int
+  crimeType CrimeType @relation(fields: [crimeTypeId], references: [id])
+  countyId Int
+  county County @relation(fields: [countyId], references: [id])
+}
+
+model Agressor {
+  id Int @id @default(autoincrement())
+  name String
+  scholarship String
+  sex String
+  age Int
+  activity String
+  createdAt DateTime @default(now())
+  agressorVictim AgressorVictim[]
+}
+
+model Victim {
+  id Int @id @default(autoincrement())
+  name String
+  age Int
+  sex String
+  activity String
+  createdAt DateTime @default(now())  
+  agressorVictim AgressorVictim[]
+}
+
+model AgressorVictim {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())  
+  agressorId Int
+  agressor Agressor @relation(fields: [agressorId], references: [id])
+  victimId Int
+  victim Victim @relation(fields: [victimId], references: [id])
+  relationshipId Int
+  relationship Relationship @relation(fields: [relationshipId], references: [id])
+}
+
+model Relationship {
+  id Int @id @default(autoincrement())
+  name String
+  createdAt DateTime @default(now())  
+  agressorVictim AgressorVictim[]
+}
+
+model ViolenceType {
+  id Int @id @default(autoincrement())
+  name String
+  createdAt DateTime @default(now())  
+  violenceCase ViolenceCase[]
+}
+
+model CrimeType {
+  id Int @id @default(autoincrement())
+  name String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  crime ViolenceCase[]
+}
+
+model County {
+  id Int @id @default(autoincrement())
+  name String
+  createdAt DateTime @default(now())  
+  municipalityId Int
+  municipality Municipality @relation(fields: [municipalityId], references: [id])
+  violenceCase ViolenceCase[]
+}
+
+model Municipality {
+  id Int @id @default(autoincrement())
+  name String  
+  createdAt DateTime @default(now())  
+  county County[]
+  stateId Int
+  state State @relation(fields: [stateId], references: [id])
+}
+
+model State {
+  id Int @id @default(autoincrement())
+  name String
+  createdAt DateTime @default(now())  
+  municipality Municipality[]
+}
