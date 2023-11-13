@@ -6,7 +6,7 @@ export type SingleColor = typeof COLORS[keyof typeof COLORS_BUTTONS]
 
 export type ButtonsProps = {
   text: string
-  bgColor?: SingleColor
+  className?: string
 }
 export type SVGProps = {
   fill?: SingleColor

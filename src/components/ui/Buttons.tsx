@@ -1,9 +1,13 @@
-import { COLORS } from '@/constants'
+import { cn } from '@/lib/util'
 import { type ButtonsProps } from '@/types'
 
-export const ButtonPrimary = ({ text, bgColor = COLORS.primary }: ButtonsProps) => {
+export const ButtonPrimary = ({ text, className }: ButtonsProps) => {
   return (
-   <button type='button' style={{ backgroundColor: bgColor }} className='px-3 py-2 text-white rounded-md max-w-fit'>
+   <button type='button' className={
+    cn(
+      'px-3 py-2 text-white rounded-md max-w-fit', className
+    )
+   }>
       <span>{text}</span>
     </button>
   )

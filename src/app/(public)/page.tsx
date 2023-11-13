@@ -32,6 +32,9 @@ export default function Home () {
           <Login />
         </div>
       </section>
+      <section className='h-[600px]'>
+
+      </section>
     </>
   )
 }

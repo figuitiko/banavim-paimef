@@ -27,7 +27,7 @@ body {
 } */
 
 body{
-  @apply bg-accent;
+  @apply bg-accent flex flex-col min-h-screen;
 }
 section {
   @apply flex justify-center w-full flex-col bg-main;
