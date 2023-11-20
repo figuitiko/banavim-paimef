@@ -18,8 +18,7 @@ model User {
 }
 
 model ViolenceCase {
-  id Int @id @default(autoincrement())
-  title String
+  id Int @id @default(autoincrement())  
   description String
   location String
   date DateTime
@@ -31,48 +30,47 @@ model ViolenceCase {
   violenceType ViolenceType @relation(fields: [violenceTypeId], references: [id])
   crimeTypeId Int
   crimeType CrimeType @relation(fields: [crimeTypeId], references: [id])
-  countyId Int
-  county County @relation(fields: [countyId], references: [id])
+  countyId Int  
+  victimViolenceCase VictimViolenceCase[]
 }
-
-model Agressor {
-  id Int @id @default(autoincrement())
-  name String
-  scholarship String
-  sex String
-  age Int
-  activity String
-  createdAt DateTime @default(now())
-  agressorVictim AgressorVictim[]
-}
-
 model Victim {
   id Int @id @default(autoincrement())
   name String
   age Int
   sex String
   activity String
+  livingPlace String
   createdAt DateTime @default(now())  
-  agressorVictim AgressorVictim[]
+  victimViolenceCase VictimViolenceCase[]  
+  rangeAgeId Int  
 }
-
-model AgressorVictim {
+model VictimViolenceCase {
   id Int @id @default(autoincrement())
-  createdAt DateTime @default(now())  
-  agressorId Int
-  agressor Agressor @relation(fields: [agressorId], references: [id])
   victimId Int
   victim Victim @relation(fields: [victimId], references: [id])
-  relationshipId Int
-  relationship Relationship @relation(fields: [relationshipId], references: [id])
+  violenceCaseId Int
+  scholarchip String
+  civilStatus String
+  violenceCase ViolenceCase @relation(fields: [violenceCaseId], references: [id])
+  createdAt DateTime @default(now())  
 }
 
-model Relationship {
-  id Int @id @default(autoincrement())
-  name String
-  createdAt DateTime @default(now())  
-  agressorVictim AgressorVictim[]
+model Agressor {
+  id Int @id @default(autoincrement())  
+  scholarship String
+  sex String
+  civilStatus String
+  age Int
+  relativeLink String
+  isKnown Boolean
+  isDrugAddict Boolean
+  activity String
+  dateCase DateTime  
+  createdAt DateTime @default(now())
+  municipalityId Int
+  municipality Municipality @relation(fields: [municipalityId], references: [id])  
 }
+
 
 model ViolenceType {
   id Int @id @default(autoincrement())
@@ -89,27 +87,9 @@ model CrimeType {
   crime ViolenceCase[]
 }
 
-model County {
-  id Int @id @default(autoincrement())
-  name String
-  createdAt DateTime @default(now())  
-  municipalityId Int
-  municipality Municipality @relation(fields: [municipalityId], references: [id])
-  violenceCase ViolenceCase[]
-}
-
 model Municipality {
   id Int @id @default(autoincrement())
-  name String  
-  createdAt DateTime @default(now())  
-  county County[]
-  stateId Int
-  state State @relation(fields: [stateId], references: [id])
-}
-
-model State {
-  id Int @id @default(autoincrement())
-  name String
-  createdAt DateTime @default(now())  
-  municipality Municipality[]
+  name String  @unique
+  createdAt DateTime @default(now())   
+  Agressor Agressor[]
 }

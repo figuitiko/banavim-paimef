@@ -1,3 +1,4 @@
+import DropZoneFile from '@/components/share/file/DropZoneFile'
 import { getServerSession } from 'next-auth'
 
 const page = async () => {
@@ -5,7 +6,7 @@ const page = async () => {
   console.log({ session })
   return (
     <>
-      hello
+      <DropZoneFile />
     </>
   )
 }
