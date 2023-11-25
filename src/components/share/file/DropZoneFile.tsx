@@ -11,10 +11,10 @@ const DropZoneFile = ({ upLoadType }: DropzoneProps) => {
   return (
     <Dropzone onDrop={handleOndrop}>
       {({ getRootProps, getInputProps }) => (
-        <section className='flex p-8 justify-center w-full bg-slate-400 opacity-4 max-h-[50vh]'>
+        <section className='flex p-8 justify-center w-full bg-slate-300 opacity-4 max-h-[50vh] rounded-xl'>
           <div {...getRootProps()} className='flex w-full justify-center'>
             <input {...getInputProps()} />
-            <p>{APP_MESSAGES.DROPZONE_DROP}</p>
+            <p className='text-primary'>{APP_MESSAGES.DROPZONE_DROP}</p>
           </div>
         </section>
       )}

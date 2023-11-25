@@ -3,14 +3,14 @@ import React from 'react'
 
 const MenuOptions = () => {
   return (
-    <nav className='flex justify-center flex-col'>
-      <h3 className='text-2xl'>Menu</h3>
-      <ul className='flex flex-col'>
+    <nav className='flex justify-center flex-col text-white items-center'>
+      <ul className='flex flex-col gap-8 [&>li]:text-xl'>
+      <h3 className='text-3xl mb-4'>Menu</h3>
         <li>
-          <Link href={'/dashboard'}>Agressors</Link>
+          <Link href={'/dashboard'}>Agresores</Link>
         </li>
         <li>
-          <Link href={'/dashboard/victims'}>Victims</Link>
+          <Link href={'/dashboard/victims'}>Casos de Violencia</Link>
         </li>
         <li>Profile</li>
         <li>Settings</li>

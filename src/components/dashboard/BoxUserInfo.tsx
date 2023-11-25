@@ -4,7 +4,7 @@ import { Icons } from '../ui/icons'
 
 const BoxUserInfo = ({ name, email }: BoxUserInfoProps) => {
   return (
-    <div className='flex text-primary text-sm gap-2'>
+    <div className='flex text-white text-sm gap-2'>
       <IconWrapper>
         <Icons.User />
       </IconWrapper>
