@@ -18,8 +18,7 @@ model User {
 }
 
 model ViolenceCase {
-  id Int @id @default(autoincrement())  
-  description String
+  id Int @id @default(autoincrement())    
   location String
   date DateTime
   isOrganizedCrime Boolean
@@ -29,8 +28,7 @@ model ViolenceCase {
   violenceTypeId Int
   violenceType ViolenceType @relation(fields: [violenceTypeId], references: [id])
   crimeTypeId Int
-  crimeType CrimeType @relation(fields: [crimeTypeId], references: [id])
-  countyId Int  
+  crimeType CrimeType @relation(fields: [crimeTypeId], references: [id])  
   victimViolenceCase VictimViolenceCase[]
 }
 model Victim {
@@ -57,18 +55,15 @@ model VictimViolenceCase {
 
 model Agressor {
   id Int @id @default(autoincrement())  
-  scholarship String
-  sex String
-  civilStatus String
-  age Int
-  relativeLink String
-  isKnown Boolean
-  isDrugAddict Boolean
-  activity String
-  dateCase DateTime  
+  scholarship String?
+  sex String?
+  civilStatus String?
+  age Int?  
+  isKnown Boolean @default(false)  
+  dateCase DateTime?  
   createdAt DateTime @default(now())
-  municipalityId Int
-  municipality Municipality @relation(fields: [municipalityId], references: [id])  
+  municipalityName String @default("Durango")
+  municipality Municipality @relation(fields: [municipalityName], references: [name])  
 }
 
 
@@ -91,5 +86,5 @@ model Municipality {
   id Int @id @default(autoincrement())
   name String  @unique
   createdAt DateTime @default(now())   
-  Agressor Agressor[]
+  Agressors Agressor[]
 }

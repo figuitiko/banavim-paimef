@@ -1,5 +1,4 @@
-// import { type Icons } from '@/components/ui/icons'
-import { type PRIMARY_MENU, type COLORS } from '../constants'
+import { type PRIMARY_MENU, type COLORS, type UPLOAD_ITEMS } from '../constants'
 import type React from 'react'
 
 export type SingleColor = typeof COLORS[keyof typeof COLORS_BUTTONS]
@@ -31,3 +30,17 @@ export type User = {
   id: string
 }
 export type BoxUserInfoProps = Pick<User, 'name' | 'email'>
+
+export type TuploaderItem = typeof UPLOAD_ITEMS[number]
+
+export type DropzoneProps = {
+  upLoadType: TuploaderItem
+}
+
+export type IndicatorAgressorItem = typeof MAPPED_INDICATORS_AGRESSORS[keyof typeof MAPPED_INDICATORS_AGRESSORS]
+
+export type TypeHandleReaderArg = {
+  reader: FileReader
+  result: Agressor[]
+  file: File
+}

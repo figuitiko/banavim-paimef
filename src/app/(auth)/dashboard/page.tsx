@@ -1,12 +1,10 @@
 import DropZoneFile from '@/components/share/file/DropZoneFile'
-import { getServerSession } from 'next-auth'
+import { KEY_CASES } from '@/constants'
 
 const page = async () => {
-  const session = await getServerSession()
-  console.log({ session })
   return (
     <>
-      <DropZoneFile />
+      <DropZoneFile upLoadType={KEY_CASES[0]} />
     </>
   )
 }
