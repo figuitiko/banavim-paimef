@@ -45,7 +45,6 @@ const handleReader = async ({ reader, result, file, type }: TypeHandleReaderArg)
         }, {})
         result.push(res as TypeHandlerReducersResultItem)
       }
-      console.log({ result })
       resolve(result)
     }
     reader.readAsText(file)
