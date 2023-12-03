@@ -1,0 +1,10 @@
+-- DropIndex
+DROP INDEX "Order_victimName_key";
+
+-- AlterTable
+ALTER TABLE "Order" ALTER COLUMN "victimName" DROP NOT NULL,
+ALTER COLUMN "age" DROP NOT NULL,
+ALTER COLUMN "orderType" DROP NOT NULL,
+ALTER COLUMN "description" DROP NOT NULL,
+ALTER COLUMN "date" DROP NOT NULL,
+ALTER COLUMN "emisorAuthority" DROP NOT NULL;

@@ -1,12 +1,8 @@
-import DropZoneFile from '@/components/share/file/DropZoneFile'
-import { KEY_CASES } from '@/constants'
+import { permanentRedirect } from 'next/navigation'
 
 const page = async () => {
-  return (
-    <>
-      <DropZoneFile upLoadType={KEY_CASES[0]} />
-    </>
-  )
+  permanentRedirect('/dashboard/agressors')
+  return null
 }
 
 export default page

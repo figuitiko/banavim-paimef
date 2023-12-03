@@ -19,38 +19,25 @@ model User {
 
 model ViolenceCase {
   id Int @id @default(autoincrement())    
-  location String
-  date DateTime
-  isOrganizedCrime Boolean
-  hasOrderOfProtection Boolean  
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  violenceTypeId Int
-  violenceType ViolenceType @relation(fields: [violenceTypeId], references: [id])
-  crimeTypeId Int
-  crimeType CrimeType @relation(fields: [crimeTypeId], references: [id])  
-  victimViolenceCase VictimViolenceCase[]
-}
-model Victim {
-  id Int @id @default(autoincrement())
-  name String
-  age Int
-  sex String
-  activity String
-  livingPlace String
+  modality String?
+  isKnownByAuthorities Boolean @default(false)
+  linkWithVictim Boolean?
+  date DateTime @default(now())  
   createdAt DateTime @default(now())  
-  victimViolenceCase VictimViolenceCase[]  
-  rangeAgeId Int  
-}
-model VictimViolenceCase {
-  id Int @id @default(autoincrement())
-  victimId Int
-  victim Victim @relation(fields: [victimId], references: [id])
-  violenceCaseId Int
-  scholarchip String
-  civilStatus String
-  violenceCase ViolenceCase @relation(fields: [violenceCaseId], references: [id])
-  createdAt DateTime @default(now())  
+  isPhysical Boolean @default(false)
+  isPsychological Boolean @default(false)
+  isSexual Boolean @default(false)
+  isEconomic Boolean @default(false)
+  isPatrimonial Boolean @default(false)
+  isOther Boolean @default(false)
+  amountAgressors Int @default(0)  
+  scholarship String?  
+  name String?
+  age Int?
+  sex String?
+  civilStatus String?
+  municipalityName String @default("Durango")
+  municipality Municipality @relation(fields: [municipalityName], references: [name])  
 }
 
 model Agressor {
@@ -65,26 +52,37 @@ model Agressor {
   municipalityName String @default("Durango")
   municipality Municipality @relation(fields: [municipalityName], references: [name])  
 }
-
-
-model ViolenceType {
+model Order {
   id Int @id @default(autoincrement())
-  name String
-  createdAt DateTime @default(now())  
-  violenceCase ViolenceCase[]
+  victimName String?
+  age Int?
+  orderType String?
+  description String?
+  date DateTime?
+  emisorAuthority String?
+  municipalityName String @default("Durango")
+  municipality Municipality @relation(fields: [municipalityName], references: [name])
+  createdAt DateTime @default(now())    
+  
 }
-
-model CrimeType {
+model Service {
   id Int @id @default(autoincrement())
-  name String
+  status String?
+  serviceType String?
+  dateCapture DateTime?
+  serviceDetail String?
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  crime ViolenceCase[]
+  municipalityName String @default("Durango")
+  municipality Municipality @relation(fields: [municipalityName], references: [name])  
 }
+
 
 model Municipality {
   id Int @id @default(autoincrement())
   name String  @unique
   createdAt DateTime @default(now())   
   Agressors Agressor[]
+  ViolenceCases ViolenceCase[]
+  Orders Order[]  
+  Services Service[]
 }

@@ -1,14 +1,28 @@
-import { handleOnDropAgressorsServer } from '@/actions'
-import { handleOnDropAgressors } from '@/lib/util'
+import { handleOnDropOrders, handleOnDropAgressorsServer, handleOnDropCase, handleOnDropServices } from '@/actions'
+import { handleOnDropUtil } from '@/lib/util'
+import { type TuploaderItem } from '@/types'
+import { type ViolenceCase, type Agressor, type Order, type Service } from '@prisma/client'
 import { useState, useTransition } from 'react'
 
-const useOndrop = (upLoadType: string) => {
+const useOndrop = (upLoadType: TuploaderItem) => {
   const [errorMsg, setErrorMsg] = useState<string>('')
   const [isPending, startTransition] = useTransition()
   const handleOndrop = (files: File[]) => {
-    handleOnDropAgressors(files, upLoadType).then((resultFromFiles) => {
+    handleOnDropUtil(files, upLoadType).then((resultFromFiles) => {
       startTransition(() => {
-        handleOnDropAgressorsServer(resultFromFiles)
+        if (upLoadType === 'agressors') {
+          handleOnDropAgressorsServer(resultFromFiles as Agressor[])
+        }
+        if (upLoadType === 'cases') {
+          console.log('cases')
+          handleOnDropCase(resultFromFiles as ViolenceCase[])
+        }
+        if (upLoadType === 'orders') {
+          handleOnDropOrders(resultFromFiles as Order[])
+        }
+        if (upLoadType === 'services') {
+          handleOnDropServices(resultFromFiles as Service[])
+        }
       })
     }).catch((err) => {
       setErrorMsg(err.message)

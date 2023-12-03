@@ -1,4 +1,5 @@
-import { type PRIMARY_MENU, type COLORS, type UPLOAD_ITEMS } from '../constants'
+import { type ViolenceCase, type Agressor, type Order, type Service } from '@prisma/client'
+import { type PRIMARY_MENU, type COLORS, type UPLOAD_ITEMS, type MAPPED_INDICATORS_CASES } from '../constants'
 import type React from 'react'
 
 export type SingleColor = typeof COLORS[keyof typeof COLORS_BUTTONS]
@@ -39,8 +40,13 @@ export type DropzoneProps = {
 
 export type IndicatorAgressorItem = typeof MAPPED_INDICATORS_AGRESSORS[keyof typeof MAPPED_INDICATORS_AGRESSORS]
 
+export type TkeyCases = keyof typeof MAPPED_INDICATORS_CASES
+
+export type TypeHandlerReducersResultItem = Agressor | ViolenceCase | Order | Service
+
 export type TypeHandleReaderArg = {
   reader: FileReader
-  result: Agressor[]
+  result: TypeHandlerReducersResultItem[]
   file: File
+  type: TuploaderItem
 }

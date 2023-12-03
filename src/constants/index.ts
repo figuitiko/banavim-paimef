@@ -99,25 +99,77 @@ export const LIST_MUNICIPALITIES = [
 export const UPLOAD_ITEMS = [
   'agressors',
   'cases',
-  'services',
-  'orders'
+  'orders',
+  'services'
+] as const
+export const VIOLENCE_TYPES = [
+  'Física',
+  'Patrimonial',
+  'Psicololgica',
+  'Sexual',
+  'Economica'
 ] as const
 
+export const MAPPED_INDICATORS_AGRESSORS_VALUES = {
+  age: 'age',
+  sex: 'sex',
+  civilStatus: 'civilStatus',
+  dateCase: 'dateCase',
+  isKnown: 'isKnown',
+  scholarship: 'scholarship',
+  municipalityName: 'municipalityName'
+}
+
 export const MAPPED_INDICATORS_AGRESSORS = {
-  Escolaridad: 'scholarship',
-  Genero: 'sex',
-  EdoCivil: 'civilStatus',
-  'Edad del Agresor': 'age',
-  VinculoCon: 'relativeLink',
-  'Conoce al Agresor': 'isKnown',
-  fecha_hechos: 'dateCase',
-  Municipio: 'municipalityName'
+  Escolaridad: MAPPED_INDICATORS_AGRESSORS_VALUES.scholarship,
+  Genero: MAPPED_INDICATORS_AGRESSORS_VALUES.sex,
+  EdoCivil: MAPPED_INDICATORS_AGRESSORS_VALUES.civilStatus,
+  'Edad del Agresor': MAPPED_INDICATORS_AGRESSORS_VALUES.age,
+  'Conoce al Agresor': MAPPED_INDICATORS_AGRESSORS_VALUES.isKnown,
+  fecha_hechos: MAPPED_INDICATORS_AGRESSORS_VALUES.dateCase,
+  Municipio: MAPPED_INDICATORS_AGRESSORS_VALUES.municipalityName
 } as const
 
 export const MAPPED_INDICATORS_CASES = {
-  agressors: MAPPED_INDICATORS_AGRESSORS
+  NomUsuarioCapCaso: 'name',
+  Edad: 'age',
+  Genero: 'sex',
+  'Estado Civil': 'civilStatus',
+  Escolaridad: 'scholarship',
+  Fsica: 'isPhysical',
+  Patrimonial: 'isPatrimonial',
+  Psicolgica: 'isPsychological',
+  Sexual: 'isSexual',
+  Econmica: 'isEconomic',
+  Otro: 'isOther',
+  Agresores: 'amountAgressors',
+  'Municipio del domicilio': 'municipalityName',
+  'Conocimiento de autoridad': 'isKnownByAuthorities',
+  'Vnculo con victima': 'linkWithVictim',
+  'Modalidad de la Violencia': 'modality',
+  'Fecha hechos': 'date'
 } as const
-export const KEY_CASES = Object.keys(MAPPED_INDICATORS_CASES) as Array<(keyof typeof MAPPED_INDICATORS_CASES)>
+
+export const MAPPED_INDICATORS_ORDERS = {
+  'Municipio Evento': 'municipalityName',
+  Nombre: 'victimName',
+  Paterno: 'victimName',
+  Materno: 'victimName',
+  edad: 'age',
+  'Fecha de recepcion': 'date',
+  'Descripcion orden de procteccion': 'description',
+  'Autoridad emisora': 'emisorAuthority',
+  'Desc Tipo Orden': 'orderType'
+} as const
+
+export const MAPPED_INDICATORS_SERVICES = {
+  Municipio: 'municipalityName',
+  'Tipo de Servicio': 'serviceType',
+  'Detalle del servicio': 'serviceDetail',
+  'FechaCap Servicio': 'dateCapture',
+  estatus: 'status'
+} as const
+
 export const FILE_NAMES = {
   agressors: 'agresores.csv',
   cases: 'casos.csv',
@@ -127,6 +179,7 @@ export const FILE_NAMES = {
 
 export const APP_MESSAGES = {
   FILE_NAME_NOT_MATCH: 'El nombre del archivo no coincide con el tipo de archivo seleccionado',
+  FILE_TYPE_NOT_MATCH: 'El tipo de archivo seleccionado no es válido',
   FILE_EMPTY: 'El archivo seleccionado está vacío',
   DROPZONE_DROP: 'Arrastra y suelta el archivo aquí o has doble click para seleccionar el archivo'
 } as const
