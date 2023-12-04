@@ -1,3 +1,5 @@
+import { type KpiItem } from '@/types'
+
 export const COLORS = {
   main: '#FFF',
   accent: '#F4F4F4',
@@ -16,9 +18,9 @@ export const PRIMARY_MENU = {
     agresors: 'Número de agresores',
     municipalities: 'Municipios atendidos'
   },
-  georeferenced: 'Análisis Georreferenciado',
-  downloads: 'Descargas de Datos',
-  file: 'Ficha Tecnica de Indicadores'
+  georeferenced: 'Análisis Georreferenciado'
+  // downloads: 'Descargas de Datos',
+  // file: 'Ficha Tecnica de Indicadores'
 } as const
 
 export const HOME_FACTS = [
@@ -178,8 +180,99 @@ export const FILE_NAMES = {
 } as const
 
 export const APP_MESSAGES = {
+  HEADING_HOME: 'Programa de Apoyo a las Instancias de Mujeres en las Entidades Federativas (PAIMEF).',
+  SUBHEADING_HOME: 'El núcleo de nuestra iniciativa radica en la análisis y utilización estratégica de los datos recopilados en el Banco Nacional de Datos e Información sobre Casos de Violencia contra las Mujeres (BANAVIM). A través de esta plataforma, ofrecemos herramientas especializadas para la formulación y evaluación de políticas públicas dirigidas a combatir la violencia contra las mujeres en áreas locales específicas, siempre guiados por una perspectiva fundamentada en los principios de género y derechos humanos.',
+  SUBHEADING_HOME_2: 'Datos a destacar',
+  HIGHLIGHT_HEADING_HOME: 'Empoderando Cambios Positivos: Transformando Datos en Acciones Concretas.',
   FILE_NAME_NOT_MATCH: 'El nombre del archivo no coincide con el tipo de archivo seleccionado',
   FILE_TYPE_NOT_MATCH: 'El tipo de archivo seleccionado no es válido',
   FILE_EMPTY: 'El archivo seleccionado está vacío',
-  DROPZONE_DROP: 'Arrastra y suelta el archivo aquí o has doble click para seleccionar el archivo'
+  DROPZONE_DROP: 'Arrastra y suelta el archivo aquí o has doble click para seleccionar el archivo',
+  TITLE_VIOLENCE_TYPE: 'Casos de violencia por tipo',
+  TITLE_VIOLENCE_MODALITY: 'Casos de violencia por modalidad',
+  DATA_NOT_FOUND: 'No se encontraron datos'
+} as const
+
+export const TextsSectionIcons = {
+  totalCases: {
+    text: 'Número de casos de violencia registrados',
+    icon: 'world'
+  },
+  totalOrders: {
+    text: 'Órdenes de protección capturadas',
+    icon: 'scale'
+  },
+  totalServices: {
+    text: 'Servicios de atención otorgados registrados ',
+    icon: 'comment'
+  },
+  totalAgressorsWomen: {
+    text: 'Casos de violencia perpetrados por agresoras mujeres',
+    icon: 'user'
+  },
+  totalAgressorMen: {
+    text: 'Casos de violencia perpetrados por agresores hombres',
+    icon: 'user'
+  }
+} as const
+
+export const kpiItemsViolence = [
+  {
+    value: 1,
+    label: 'PISICOLÓGICA'
+  },
+  {
+    value: 2,
+    label: 'FÍSICA'
+  },
+  {
+    value: 3,
+    label: 'ECONÓMICA'
+  },
+  {
+    value: 4,
+    label: 'PATRIMONIAL'
+  },
+  {
+    value: 5,
+    label: 'SEXUAL'
+  }
+] satisfies KpiItem[]
+
+export const kpiViolenceTypeMapper = {
+  violenceCasePhysical: 'Física',
+  violenceCasePsychological: 'Psicológica',
+  violenceCasePatrimonial: 'Patrimonial',
+  violenceCaseSexual: 'Sexual',
+  violenceCaseEconomic: 'Económica'
+} as const
+
+export const rgbaColorsViolenceTypes = [
+  'rgba(255, 99, 132, 0.5)',
+  'rgba(255, 205, 86, 0.5)',
+  'rgba(75, 192, 192, 0.5)',
+  'rgba(255, 159, 64, 0.5)',
+  'rgba(54, 162, 235, 0.5)',
+  'rgba(153, 102, 255, 0.5)',
+  'rgba(201, 203, 207, 0.5)'
+] as const
+
+export const VIOLENCE_MODALITIES = [
+  'Laboral',
+  'Escolar/Docente',
+  'comunidad',
+  'Institucional',
+  'Feminicida',
+  'Familiar',
+  'Digital/Ciberntica'
+] as const
+
+export const VIOLENCE_MODALITIES_MAPPER = {
+  violenceModalityLabor: 'Laboral',
+  violenceModalitySchool: 'Escolar/Docente',
+  violenceModalityCommunity: 'Comunidad',
+  violenceModalityInstitutional: 'Institucional',
+  violenceModalityFeminicide: 'Feminicida',
+  violenceModalityFamily: 'Familiar',
+  violenceModalityDigital: 'Digital/Cibernética'
 } as const

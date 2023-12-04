@@ -30,14 +30,14 @@ body{
   @apply bg-accent flex flex-col min-h-screen;
 }
 section {
-  @apply flex justify-center w-full flex-col bg-main;
+  @apply flex justify-center w-full flex-col bg-main my-4;
 }
 
 .hightlight-heading{
   @apply text-highlight-text font-semibold uppercase leading-6;
 }
 .sub-heading {
-  @apply text-4xl font-extrabold tracking-[-0.9px];
+  @apply text-4xl font-extrabold tracking-[-0.9px] text-center;
 }
 p {
   @apply text-xl font-normal leading-8 text-paragraph;

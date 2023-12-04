@@ -15,6 +15,9 @@ export const handleReducerAgressors = (acc: Record<string, string | number | boo
     if (mappedVal === MAPPED_INDICATORS_AGRESSORS_VALUES.age) {
       return { ...acc, [mappedVal]: Number(value) }
     }
+    if (mappedVal === MAPPED_INDICATORS_AGRESSORS_VALUES.sex) {
+      return { ...acc, [mappedVal]: value !== '' ? value : 'Hombre' }
+    }
     if (mappedVal === MAPPED_INDICATORS_AGRESSORS_VALUES.municipalityName) {
       return { ...acc, [mappedVal]: LIST_MUNICIPALITIES.includes(value as (typeof LIST_MUNICIPALITIES)[number]) ? value : 'Durango' }
     }

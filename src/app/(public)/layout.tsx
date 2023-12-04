@@ -16,7 +16,7 @@ export default function PublicLayout ({
   return (
     <>
       <Header />
-      <main className='flex flex-col max-w-[1142px] m-auto py-6 flex-1'>
+      <main className='flex flex-col max-w-[1142px] m-auto py-6 flex-1 w-full'>
         {children}
       </main>
       <Footer />
