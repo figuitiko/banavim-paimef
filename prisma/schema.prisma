@@ -45,6 +45,7 @@ model Agressor {
   scholarship String?
   sex String?
   civilStatus String?
+  relationship String?
   age Int?  
   isKnown Boolean @default(false)  
   dateCase DateTime?  

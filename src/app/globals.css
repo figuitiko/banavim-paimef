@@ -25,12 +25,14 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
-
+html {
+  scroll-behavior: smooth;
+}
 body{
   @apply bg-accent flex flex-col min-h-screen;
 }
 section {
-  @apply flex justify-center w-full flex-col bg-main my-4;
+  @apply flex justify-center w-full flex-col bg-main my-4 p-12 gap-4 relative;
 }
 
 .hightlight-heading{

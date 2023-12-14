@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { getGeneralData, getViolenceCasesByModality, getViolenceCasesByViolenceType } from '@/lib/fetcher'
+import { getViolenceCasesByModality, getViolenceCasesByViolenceType } from '@/lib/fetchers/cases'
 import { Suspense } from 'react'
 import Await from '@/components/share/common/Await'
 import SectionIcons from '@/components/share/common/SectionIcons'
@@ -8,6 +8,8 @@ import ViolenceTypeWrapper from '@/components/home/ViolenceTypeWrapper'
 import ViolenceModalityWrapper from '@/components/home/ViolenceModalityWrapper'
 import Skeleton from '@/components/ui/Skeletons/Skeleton'
 import { APP_MESSAGES } from '@/constants'
+import { ButtonPrimary } from '@/components/ui/Buttons'
+import { getGeneralData } from '@/lib/fetchers/general'
 
 export default async function Home () {
   const dataPromise = getGeneralData()
@@ -50,12 +52,6 @@ export default async function Home () {
             }
           </Await>
         </Suspense>
-        {/* <div>
-          <InfoBox iconName='mail' />
-        </div>
-        <div>
-          <Login />
-        </div> */}
       </section>
       <section id='home-data'>
         <Suspense fallback={<Skeleton height={539} width={1200} />}>
@@ -72,6 +68,9 @@ export default async function Home () {
             }
           </Await>
         </Suspense>
+        <div className='flex w-full justify-center'>
+        <ButtonPrimary text='ver más' className='bg-third' linkButtonFn='/indicators/cases?year=2020' />
+      </div>
       </section>
     </>
   )

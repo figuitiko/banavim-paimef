@@ -4,10 +4,13 @@ import type React from 'react'
 import { type IconsMapper } from '@/components/share/common/InfoBox'
 
 export type SingleColor = typeof COLORS[keyof typeof COLORS_BUTTONS]
-
+type href = string
+type handleClick = () => void
+export type LinkButtonFn = href | handleClick
 export type ButtonsProps = {
   text: string
   className?: string
+  linkButtonFn: LinkButtonFn
 }
 export type SVGProps = {
   fill?: SingleColor
@@ -105,7 +108,24 @@ export type BarChartProps = {
 export type datasetItem = {
   label: string
   data: number[]
-  backgroundColor: string
+  backgroundColor: string | string[]
+  borderColor?: string | string[]
+  borderWidth?: number
+}
+export type PieChartProps = {
+  labels: string[]
+  datasets: datasetItem[]
+  title?: string
+}
+export type HorizontalBarChartProps = {
+  datasets: dataSetHorizontalItem[]
+  labels: string[]
+}
+export type dataSetHorizontalItem = {
+  label: string
+  data: number[]
+  backgroundColor: string | string[]
+  borderColor?: string | string[]
 }
 
 export type RGBAColor = `rbga(${number}, ${number}, ${number}, ${number})`
@@ -127,4 +147,62 @@ export type ViolenceModalityWrapperProps = {
 export type SkeletonProps = {
   height: number
   width: number
+}
+export type AccordionComponentProps = {
+  accordionItems: AccordionItemProp[]
+}
+export type AccordionItemProp = {
+  title: string
+  content: string
+}
+
+export type TypeAgressosrByAge = {
+  agressorsAgeRange1: number
+  agressorsAgeRange2: number
+  agressorsAgeRange3: number
+  agressorsAgeRange4: number
+  agressorsAgeRange5: number
+  agressorsAgeRange6: number
+}
+export type AgressorsByAgeWrapperProps = {
+  data: TypeAgressosrByAge | undefined
+}
+
+export type TypeAgressorsByMunicipality = Record<string, number>
+export type AgressorsByMunicipalityWrapperProps = {
+  data: TypeAgressorsByMunicipality | undefined
+}
+
+export type InternalSideBarProps = {
+  items: InternalNavBarItem[]
+}
+export type InternalNavBarItem = {
+  title: string
+  href: string
+}
+export type AgressorsBySexWrapperProps = {
+  data: Record<string, number> | undefined
+}
+
+export type GripByPieProps = {
+  data: Record<string, number> | undefined
+  label: string
+  backgroundColors: string[]
+  isRight?: boolean
+  mapper?: Record<string, string>
+}
+
+export type GripByBarProps = {
+  data: Record<string, number> | undefined
+  label: string
+  backgroundColors?: string[]
+  isRight?: boolean
+  mapper?: Record<string, string>
+}
+
+export type GridHorizontalBarProps = {
+  data: Record<string, number> | undefined
+  label?: string
+  isRight?: boolean
+  kpiTitle?: string
 }

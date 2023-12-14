@@ -1,5 +1,5 @@
 'use client'
-import { type BarChartProps } from '@/types'
+import { type HorizontalBarChartProps } from '@/types'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -17,27 +17,32 @@ ChartJS.register(
   Tooltip,
   Legend
 )
-
 export const options = {
-  responsive: true,
+  indexAxis: 'y' as const,
   aspectRatio: 1,
+  elements: {
+    bar: {
+      borderWidth: 2
+    }
+  },
+  responsive: true,
   plugins: {
     legend: {
-      position: 'top' as const
+      position: 'right' as const
     }
   }
 }
 
-const BarChart = ({ datasets, labels }: BarChartProps) => {
+const HorizontalBarChart = ({ labels, datasets }: HorizontalBarChartProps) => {
   const data = {
     labels,
     datasets
   }
   return (
     <div className='flex w-full h-full flex-1 p-4'>
-      <Bar options={options} data={data} />
+    <Bar options={options} data={data} />
     </div>
   )
 }
 
-export default BarChart
+export default HorizontalBarChart

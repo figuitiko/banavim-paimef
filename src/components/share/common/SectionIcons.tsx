@@ -3,6 +3,8 @@ import { type ItemIconProps, type SectionIconsProps } from '@/types'
 import React from 'react'
 import InfoBox, { type IconsMapper } from './InfoBox'
 
+import CountUpWrapper from './CountUpWrapper'
+
 const SectionIcons = ({ data }: SectionIconsProps) => {
   if (data === undefined) return <div>{APP_MESSAGES.DATA_NOT_FOUND} </div>
   return (
@@ -26,7 +28,7 @@ const ItemIcon = ({ iconName, text, itemVal }: ItemIconProps) => {
     <div className='flex flex-[0_0_33%] gap-4 mt-4'>
       <InfoBox iconName={iconName} />
       <div className='flex flex-col justify-between'>
-        <h3>{itemVal}</h3>
+        <h3>{<CountUpWrapper val={itemVal} />}</h3>
         <p>{text}</p>
       </div>
     </div>

@@ -4,22 +4,35 @@ import ContentLoader from 'react-content-loader'
 
 const Skeleton = ({ height, width }: SkeletonProps) => {
   return (
-    <ContentLoader
-    speed={2}
-    width={width}
-    height={height}
-    viewBox={`0 0 ${width} ${height}`}
-    backgroundColor='#f3f3f3'
-    foregroundColor='#ecebeb'
-  >
-    <rect x='48' y='8' rx='3' ry='3' width='88' height='6' />
-    <rect x='48' y='26' rx='3' ry='3' width='52' height='6' />
-    <rect x='0' y='56' rx='3' ry='3' width='410' height='6' />
-    <rect x='0' y='72' rx='3' ry='3' width='380' height='6' />
-    <rect x='0' y='88' rx='3' ry='3' width='178' height='6' />
-    <circle cx='62' cy='27' r='20' />
-    <rect x='8' y='2' rx='0' ry='0' width='397' height='227' />
-  </ContentLoader>
+    <ContentLoader viewBox="0 0 800 400" height={600} width={1200}>
+      <circle cx="472" cy="159" r="7" />
+      <rect x="487" y="154" rx="5" ry="5" width="220" height="10" />
+      <circle cx="472" cy="190" r="7" />
+      <rect x="487" y="184" rx="5" ry="5" width="220" height="10" />
+      <circle cx="472" cy="219" r="7" />
+      <rect x="487" y="214" rx="5" ry="5" width="220" height="10" />
+      <circle cx="472" cy="249" r="7" />
+      <rect x="487" y="244" rx="5" ry="5" width="220" height="10" />
+      <rect x="64" y="18" rx="0" ry="0" width="346" height="300" />
+      <rect x="229" y="300" rx="0" ry="0" width="0" height="0" />
+      <rect x="111" y="340" rx="0" ry="0" width="0" height="0" />
+      <rect x="121" y="342" rx="0" ry="0" width="0" height="0" />
+      <rect x="10" y="20" rx="0" ry="0" width="40" height="44" />
+      <rect x="10" y="80" rx="0" ry="0" width="40" height="44" />
+      <rect x="10" y="140" rx="0" ry="0" width="40" height="44" />
+      <rect x="194" y="329" rx="0" ry="0" width="0" height="0" />
+      <rect x="192" y="323" rx="0" ry="0" width="0" height="0" />
+      <rect x="185" y="323" rx="0" ry="0" width="0" height="0" />
+      <rect x="10" y="200" rx="0" ry="0" width="40" height="44" />
+      <rect x="470" y="18" rx="0" ry="0" width="300" height="25" />
+      <rect x="470" y="58" rx="0" ry="0" width="300" height="6" />
+      <rect x="470" y="68" rx="0" ry="0" width="300" height="6" />
+      <rect x="470" y="78" rx="0" ry="0" width="300" height="6" />
+      <rect x="798" y="135" rx="0" ry="0" width="0" height="0" />
+      <rect x="731" y="132" rx="0" ry="0" width="0" height="0" />
+      <rect x="470" y="99" rx="0" ry="0" width="70" height="30" />
+      <rect x="560" y="99" rx="0" ry="0" width="70" height="30" />
+    </ContentLoader>
   )
 }
 
