@@ -187,7 +187,7 @@ export type AgressorsBySexWrapperProps = {
 export type GripByPieProps = {
   data: Record<string, number> | undefined
   label: string
-  backgroundColors: string[]
+  backgroundColors?: string[]
   isRight?: boolean
   mapper?: Record<string, string>
 }
@@ -205,4 +205,10 @@ export type GridHorizontalBarProps = {
   label?: string
   isRight?: boolean
   kpiTitle?: string
+}
+export type TooltipLocatorProps = {
+  left: string
+  top: string
+  tooltipContent: string
+  delay?: number
 }

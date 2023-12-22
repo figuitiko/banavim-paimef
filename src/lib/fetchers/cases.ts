@@ -256,3 +256,35 @@ export const getViolenceCasesByModalityByYear = async (year: number) => {
     console.log(error)
   }
 }
+
+export const getCasesByMunicipality = async (year: number | undefined) => {
+  let whereClause = {}
+  if (year !== undefined) {
+    whereClause = {
+      date: {
+        gte: new Date(year, 0, 1),
+        lte: new Date(year, 11, 31)
+      }
+    }
+  }
+  try {
+    const result = await prisma.violenceCase.groupBy({
+      by: ['municipalityName'],
+      _count: {
+        municipalityName: true
+      },
+      where: {
+        ...whereClause
+      }
+    })
+
+    const mapperValue = result.reduce<Record<string, number>>((acc, curr) => {
+      if (curr.municipalityName === undefined || curr._count === undefined) return acc
+      acc[curr.municipalityName] = Number(curr._count.municipalityName)
+      return acc
+    }, {})
+    return mapperValue
+  } catch (error) {
+    console.log(error)
+  }
+}

@@ -3,7 +3,7 @@ import KpiBox from '@/components/share/common/KpiBox'
 import { MotionDiv } from '@/components/share/common/Motion'
 import { APP_MESSAGES } from '@/constants'
 import { dataPieFormatter } from '@/lib/dataPieFormatter'
-import { getMapper } from '@/lib/formatters'
+import { getMapper, randomRgba } from '@/lib/formatters'
 import { fadeIn } from '@/lib/motion'
 import { cn } from '@/lib/util'
 import { type GripByPieProps } from '@/types'
@@ -12,7 +12,8 @@ const GridByPie = ({ data, backgroundColors, label, isRight = false, mapper }: G
   if (data === undefined) return (<div>{APP_MESSAGES.DATA_NOT_FOUND}</div>)
   const mapperValue = getMapper(data)
   mapper = mapper ?? mapperValue
-  const { datasets, violenceItemsKpi, labels } = dataPieFormatter(data, mapper, label, backgroundColors)
+  const rgbaColors = backgroundColors ?? Object.keys(data).map(randomRgba)
+  const { datasets, violenceItemsKpi, labels } = dataPieFormatter(data, mapper, label, rgbaColors)
   return (
     <MotionDiv id='hero'
       variants={fadeIn('right', 'tween', 0.2, 1)}

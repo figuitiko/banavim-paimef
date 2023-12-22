@@ -15,8 +15,10 @@ export const PRIMARY_MENU = {
   goals: 'Objetivos',
   indicators: {
     cases: 'Número de casos de violencia',
-    agressors: 'Número de agresores',
-    municipalities: 'Municipios atendidos'
+    agressors: 'Perfil de los agresores',
+    victims: 'Perfil de las Victimas',
+    services: 'Servicios de atención otorgados',
+    orders: 'Órdenes de protección capturadas'
   },
   georeferenced: 'Análisis Georreferenciado'
   // downloads: 'Descargas de Datos',
@@ -199,7 +201,33 @@ export const APP_MESSAGES = {
   AGRESSORS_BY_MUNICIPALITY: 'Agresores por municipio',
   AGRESSORS_BY_GENDER: 'Agresores por género',
   AGRESSORS_BY_SCHOLARSHIP: 'Agresores por escolaridad',
-  AGRESSORS_BY_RELATIONSHIP: 'Agresores por vínculo con la víctima'
+  AGRESSORS_BY_RELATIONSHIP: 'Agresores por vínculo con la víctima',
+  VICTIMS_BY_AGE: 'Víctimas por edad',
+  VICTIMS_BY_MUNICIPALITY: 'Víctimas por municipio',
+  VICTIMS_BY_GENDER: 'Víctimas por género',
+  VICTIMS_BY_SCHOLARSHIP: 'Víctimas por escolaridad',
+  VICTIMS_BY_CIVIL_STATUS: 'Víctimas por estado civil',
+  VICTIMIS_BY_AMOUNT_AGRESSORS: 'Víctimas por cantidad de agresores',
+  CASES_BY_MUN: 'Casos por municipio',
+  SERVICES_BY_TYPE: 'Servicios por tipo',
+  SERVICES_BY_MUN: 'Servicios por municipio',
+  SERVICES_BY_STATUS: 'Servicios por estatus',
+  ORDERS_BY_TYPE: 'Órdenes por tipo',
+  ORDERS_BY_AGE: 'Órdenes por edad',
+  ORDERS_BY_AUTHORITY: 'Órdenes por autoridad emisora',
+  ORDERS_BY_MUN: 'Órdenes por municipio'
+} as const
+export const INTERNAL_LINKS = {
+  age: 'Rango de edad',
+  mun: 'Por Municipio',
+  gender: 'Por Género',
+  scholarship: 'Por Escolaridad',
+  relationship: 'Por Vínculo con la víctima',
+  amount: 'Por Cantidad de Agresores',
+  civilStatus: 'Por Estado Civil',
+  type: 'Por Tipo',
+  status: 'Por Estatus',
+  authority: 'Por Autoridad Emisora'
 } as const
 
 export const TextsSectionIcons = {
@@ -374,8 +402,58 @@ export const AGRESSORS_AGE_RANGES_RGB_COLORS = [
   'rgba(153, 102, 255, 0.5)'
 ]
 
+export const SERVICES_TYPE_RGB_COLORS = [
+  'rgba(255, 99, 132, 0.5)',
+  'rgba(255, 159, 64, 0.5)',
+  'rgba(255, 205, 86, 0.5)',
+  'rgba(75, 192, 192, 0.5)',
+  'rgba(54, 162, 235, 0.5)',
+  'rgba(153, 102, 255, 0.5)'
+]
 export const AGRESSORS_BY_GENDER_RGBA = [
   'rgba(54, 162, 235, 0.5)',
   'rgba(255, 206, 86, 0.5)',
   'rgba(255, 99, 132, 0.5)'
 ]
+
+export const VICTIMS_BY_GENDER_RGBA = [
+  'rgba(255, 99, 132, 0.5)'
+]
+
+export const AMOUNT_MAPPER = {
+  1: '1 agresor',
+  2: '2 agresores',
+  3: '3 agresores',
+  4: '4 agresores',
+  5: '5 agresores'
+} as const
+
+export const COOR_MAPS = [
+  ['38%', '39%'],
+  ['29%', '13%'],
+  ['58%', '58.5%'],
+  ['34%', '65%'],
+  ['49%', '23%'],
+  ['84%', '45%'],
+  ['28%', '31%'],
+  ['60%', '48%'],
+  ['40%', '29%'],
+  ['68%', '16%'],
+  ['35%', '21%'],
+  ['66%', '30%'],
+  ['19%', '37%'],
+  ['62%', '35%'],
+  ['56%', '30%'],
+  ['47%', '57%'],
+  ['53%', '37%'],
+  ['21%', '48%'],
+  ['32%', '53%'],
+  ['72%', '47%'],
+  ['57%', '34%'],
+  ['62%', '56%'],
+  ['49%', '39%'],
+  ['21%', '34%'],
+  ['53%', '74%'],
+  ['45%', '42%'],
+  ['63%', '59.5%']
+] as const

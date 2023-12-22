@@ -69,7 +69,7 @@ export default async function Home () {
           </Await>
         </Suspense>
         <div className='flex w-full justify-center'>
-        <ButtonPrimary text='ver más' className='bg-third' linkButtonFn='/indicators/cases?year=2020' />
+        <ButtonPrimary text='Más Información' className='bg-primary' linkButtonFn='/indicators/cases?year=2020' />
       </div>
       </section>
     </>
