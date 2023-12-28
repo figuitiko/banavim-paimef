@@ -7,8 +7,8 @@ export const seed = async () => {
   const password = await bcrypt.hash('zaq123', 10)
   const user = await prisma.user.create({
     data: {
-      email: 'ffreeman@example.com',
-      name: 'Fred Freeman',
+      email: 'admin@example.com',
+      name: 'Admin',
       password
     }
   })
