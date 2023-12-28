@@ -25,7 +25,7 @@ export default async function Home () {
             }
           </h1>
           <picture className='min-w-[200px]  md:min-w-[400px] w-full'>
-            <Image src='/images/banner-image.png' width={512} height={318} alt='hero' className='object-cover' />
+            <Image src='/images/banner-main.jpeg' width={512} height={318} alt='hero' className='object-cover' />
           </picture>
         </div>
       </section>

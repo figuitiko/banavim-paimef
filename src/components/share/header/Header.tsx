@@ -1,4 +1,4 @@
-import CallToAction from './CallToAction'
+// import CallToAction from './CallToAction'
 import LogoBox from './LogoBox'
 import NavBar from './NavBar'
 
@@ -8,7 +8,7 @@ const Header = () => {
       <div className='flex justify-between md:justify-start md:flex-row py-2 w-full gap-4 max-w-[1142px]'>
         <LogoBox />
         <NavBar />
-        <CallToAction />
+        {/* <CallToAction /> */}
       </div>
     </header>
   )

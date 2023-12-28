@@ -11,8 +11,8 @@ export const COLORS = {
 } as const
 
 export const PRIMARY_MENU = {
-  about: 'Acerca del Programa',
-  goals: 'Objetivos',
+  // about: 'Acerca del Programa',
+  // goals: 'Objetivos',
   indicators: {
     cases: 'Número de casos de violencia',
     agressors: 'Perfil de los agresores',

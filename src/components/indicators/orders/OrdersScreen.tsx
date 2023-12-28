@@ -15,7 +15,7 @@ const OrdersScreen = () => {
   const ordersByMunPromise = getOrdersByMunicipality()
   return (
     <>
-      <div className='fixed right-0 top-[25vh]'>
+      <div className='fixed right-0 top-[25vh] z-10'>
         <InternalSideBar items={[
           { title: INTERNAL_LINKS.type, href: '#byType' },
           { title: INTERNAL_LINKS.age, href: '#byAge' },
