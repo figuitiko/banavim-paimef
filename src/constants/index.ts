@@ -12,7 +12,7 @@ export const COLORS = {
 
 export const PRIMARY_MENU = {
   // about: 'Acerca del Programa',
-  // goals: 'Objetivos',
+  goals: 'Objetivos del programa',
   indicators: {
     cases: 'Número de casos de violencia',
     agressors: 'Perfil de los agresores',
@@ -184,10 +184,10 @@ export const FILE_NAMES = {
 } as const
 
 export const APP_MESSAGES = {
-  HEADING_HOME: 'Programa de Apoyo a las Instancias de Mujeres en las Entidades Federativas (PAIMEF).',
-  SUBHEADING_HOME: 'El núcleo de nuestra iniciativa radica en la análisis y utilización estratégica de los datos recopilados en el Banco Nacional de Datos e Información sobre Casos de Violencia contra las Mujeres (BANAVIM). A través de esta plataforma, ofrecemos herramientas especializadas para la formulación y evaluación de políticas públicas dirigidas a combatir la violencia contra las mujeres en áreas locales específicas, siempre guiados por una perspectiva fundamentada en los principios de género y derechos humanos.',
+  HEADING_HOME: 'Banco Estatal de Datos e Información sobre Casos de Violencia contra las Mujeres de Durango',
+  SUBHEADING_HOME: 'Datos de violencia contra las mujeres en Durango La Herramienta Banavim Durango tiene como objetivo desarrollar  estadísticas con indicadores precisos, que faciliten el análisis georreferenciado de las zonas con mayor incidencia de violencia hacía las mujeres en el Estado, valorando el riesgo de violencia feminicida, marcando la pauta para fortalecer la política pública en la materia en el Estado de Durango.',
   SUBHEADING_HOME_2: 'Datos a destacar',
-  HIGHLIGHT_HEADING_HOME: 'Empoderando Cambios Positivos: Transformando Datos en Acciones Concretas.',
+  HIGHLIGHT_HEADING_HOME: 'Escenario Estatal.',
   FILE_NAME_NOT_MATCH: 'El nombre del archivo no coincide con el tipo de archivo seleccionado',
   FILE_TYPE_NOT_MATCH: 'El tipo de archivo seleccionado no es válido',
   FILE_EMPTY: 'El archivo seleccionado está vacío',
@@ -195,8 +195,8 @@ export const APP_MESSAGES = {
   TITLE_VIOLENCE_TYPE: 'Casos de violencia por tipo',
   TITLE_VIOLENCE_MODALITY: 'Casos de violencia por modalidad',
   DATA_NOT_FOUND: 'No se encontraron datos',
-  DISCLAIMER_TITLE: 'exención de responsabilidad',
-  DISCLAIMER_CONTENT: 'La legalidad, veracidad y calidad de la información publicada es responsabilidad del Instituto Estatal de las Mujeres de Durango, Banco Estatal de Datos e Información sobre Casos de Violencia contra las Mujeres de Durango como entidad pública que captura los casos de violencia hacía las mujeres, se apega a la normatividad vigente en temas de protección de datos personales de las mujeres que son atendidas en la institución. ',
+  DISCLAIMER_TITLE: 'Descarga de Responsabilidad',
+  DISCLAIMER_CONTENT: 'Las fuentes de información para alimentar el Banco Nacional de Datos e Información sobre Casos de Violencia contra las Mujeres (BANAVIM), corresponden a diferentes instituciones que atienden mujeres victimas de violencia, sus hijas e hijos, así como personas allegadas, en el estado de Durango entre las que se encuentran el Instituto Estatal de las Mujeres a través de las Unidades Locales de Atención del Programa PAIMEF y los Puntos Violetas, Programa Esmeralda de la Secretaría de Seguridad Pública, Centro de Justicia para las Mujeres de Durango, Centro de Justicia para las Mujeres de Gómez Palacio a través del Subsidio para la Alerta de Violencia de Género hacía las Mujeres, Comisión Ejecutiva Estatal de Atención a Víctimas, Sistema para el Desarrollo Integral para la Familia, Dirección de Seguridad y Protección Ciudadana de Gómez Palacio, Instituto Municipal de las Mujeres de Gómez Palacio, Procuraduría de la Defensa de la Mujer en Gómez Palacio.',
   AGRESSORS_BY_AGE: 'Agresores por edad',
   AGRESSORS_BY_MUNICIPALITY: 'Agresores por municipio',
   AGRESSORS_BY_GENDER: 'Agresores por género',
@@ -215,7 +215,12 @@ export const APP_MESSAGES = {
   ORDERS_BY_TYPE: 'Órdenes por tipo',
   ORDERS_BY_AGE: 'Órdenes por edad',
   ORDERS_BY_AUTHORITY: 'Órdenes por autoridad emisora',
-  ORDERS_BY_MUN: 'Órdenes por municipio'
+  ORDERS_BY_MUN: 'Órdenes por municipio',
+  GOALS_TITLE: 'Objetivos del programa:',
+  GOALS_CONTENT_INTRO: 'El Programa Anual del PAIMEF 2023 Construyendo redes de apoyo para las mujeres en Durango, tiene como objetivo general, coordinar con actores estratégicos acciones preventivas contra las violencias de género y la atención a mujeres, sus hijas e hijos en situaciones de violencia, a través del fortalecimiento de los espacios de atención especializada, la creación de la ruta estatal, el autocuidado y la capacitación de quienes atienden violencias así como la difusión en incorporación de las estrategias nacionales y estatales que inciden en el trabajo con la población en general para la prevención de las violencias contra las mujeres. Los objetivos específicos del programa se centran en el cumplimiento de tres vertientes;',
+  GOALS_CONTENT_P1: 'A) Promover el autocuidado, la capacitación, sensibilización y profesionalización de las personas servidoras públicas encargadas de brindar la atención a mujeres, sus hijas e hijos en situación de violencia basada en la perspectiva de género; así como el contar con indicadores y estadísticas como resultado de los casos registrados en el BANAVIM, para el desarrollo de acciones que contribuyan a incidir en la prevención y erradicación de la violencia en colaboración con instancias de procuración de justicia, seguridad, asistencia social, salud, organizaciones de la sociedad civil y la academia;',
+  GOALS_CONTENT_P2: 'B) Generar estrategias para prevenir la violencia contra las mujeres desde los ámbitos, públicos, privados, académicas y sociales, a través de la capacitación, formación y sensibilización desde un enfoque interseccional e intercultural y la difusión para promover la cultura de la denuncia y la no violencia integrando a los sectores de la sociedad civil, los sectores de servicios de salud, bienestar social, seguridad, educación y la academia; y ',
+  GOALS_CONTENT_P3: 'C) Contribuir al empoderamiento y autonomía de las mujeres sus hijas e hijos en situación de violencia a través de la atención y orientación especializada que se brinda por medio de las unidades locales de atención PAIMEF, así como el garantizar el derecho de las mujeres a una vida libre de violencia por medio de la vinculación institucional con Centros de Justicia para las Mujeres, Seguridad Pública, Servicios de Salud, Asistencia Social, Protección a Niñas, Niños, Adolescentes y Organizaciones de la Sociedad Civil.'
 } as const
 export const INTERNAL_LINKS = {
   age: 'Rango de edad',
