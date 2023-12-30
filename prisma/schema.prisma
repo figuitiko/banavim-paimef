@@ -11,79 +11,79 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String? 
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  name     String?
   password String
 }
 
 model ViolenceCase {
-  id Int @id @default(autoincrement())    
-  modality String?
-  isKnownByAuthorities Boolean @default(false)
-  linkWithVictim Boolean?
-  date DateTime @default(now())  
-  createdAt DateTime @default(now())  
-  isPhysical Boolean @default(false)
-  isPsychological Boolean @default(false)
-  isSexual Boolean @default(false)
-  isEconomic Boolean @default(false)
-  isPatrimonial Boolean @default(false)
-  isOther Boolean @default(false)
-  amountAgressors Int @default(0)  
-  scholarship String?  
-  name String?
-  age Int?
-  sex String?
-  civilStatus String?
-  municipalityName String @default("Durango")
-  municipality Municipality @relation(fields: [municipalityName], references: [name])  
+  id                   Int          @id @default(autoincrement())
+  modality             String?
+  isKnownByAuthorities Boolean      @default(false)
+  linkWithVictim       Boolean?
+  date                 DateTime     @default(now())
+  createdAt            DateTime     @default(now())
+  isPhysical           Boolean      @default(false)
+  isPsychological      Boolean      @default(false)
+  isSexual             Boolean      @default(false)
+  isEconomic           Boolean      @default(false)
+  isPatrimonial        Boolean      @default(false)
+  isOther              Boolean      @default(false)
+  amountAgressors      Int          @default(0)
+  scholarship          String?
+  name                 String?
+  age                  Int?
+  sex                  String?
+  civilStatus          String?
+  municipalityName     String       @default("Durango")
+  municipality         Municipality @relation(fields: [municipalityName], references: [name])
 }
 
 model Agressor {
-  id Int @id @default(autoincrement())  
-  scholarship String?
-  sex String?
-  civilStatus String?
-  relationship String?
-  age Int?  
-  isKnown Boolean @default(false)  
-  dateCase DateTime?  
-  createdAt DateTime @default(now())
-  municipalityName String @default("Durango")
-  municipality Municipality @relation(fields: [municipalityName], references: [name])  
-}
-model Order {
-  id Int @id @default(autoincrement())
-  victimName String?
-  age Int?
-  orderType String?
-  description String?
-  date DateTime?
-  emisorAuthority String?
-  municipalityName String @default("Durango")
-  municipality Municipality @relation(fields: [municipalityName], references: [name])
-  createdAt DateTime @default(now())    
-  
-}
-model Service {
-  id Int @id @default(autoincrement())
-  status String?
-  serviceType String?
-  dateCapture DateTime?
-  serviceDetail String?
-  createdAt DateTime @default(now())
-  municipalityName String @default("Durango")
-  municipality Municipality @relation(fields: [municipalityName], references: [name])  
+  id               Int          @id @default(autoincrement())
+  scholarship      String?
+  sex              String?
+  civilStatus      String?
+  relationship     String?
+  age              Int?
+  isKnown          Boolean      @default(false)
+  dateCase         DateTime?
+  createdAt        DateTime     @default(now())
+  municipalityName String       @default("Durango")
+  municipality     Municipality @relation(fields: [municipalityName], references: [name])
 }
 
+model Order {
+  id               Int          @id @default(autoincrement())
+  victimName       String?
+  age              Int?
+  orderType        String?
+  description      String?
+  date             DateTime?
+  emisorAuthority  String?
+  municipalityName String       @default("Durango")
+  municipality     Municipality @relation(fields: [municipalityName], references: [name])
+  createdAt        DateTime     @default(now())
+}
+
+model Service {
+  id               Int          @id @default(autoincrement())
+  status           String?
+  serviceType      String?
+  dateCapture      DateTime?
+  serviceDetail    String?
+  createdAt        DateTime     @default(now())
+  municipalityName String       @default("Durango")
+  municipality     Municipality @relation(fields: [municipalityName], references: [name])
+}
 
 model Municipality {
-  id Int @id @default(autoincrement())
-  name String  @unique
-  createdAt DateTime @default(now())   
-  Agressors Agressor[]
+  id            Int            @id @default(autoincrement())
+  name          String         @unique
+  createdAt     DateTime       @default(now())
+  Agressors     Agressor[]
   ViolenceCases ViolenceCase[]
-  Orders Order[]  
-  Services Service[]
+  Orders        Order[]
+  Services      Service[]
 }

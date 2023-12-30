@@ -34,8 +34,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/lib/seed-1.js",
-    "dist/types/**/*.ts"
-  ],
+    "dist/types/**/*.ts",
+    "src/app/api/auth/[...nextauth]/route.js"
+],
   "exclude": [
     "node_modules"
   ]
