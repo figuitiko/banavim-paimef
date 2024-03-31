@@ -4,11 +4,22 @@ import { PRIMARY_MENU } from '@/constants'
 import { cn } from '@/lib/util'
 import { type IndicatorsObjeItem } from '@/types'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const NavBar = () => {
   const [isShow, setIsShow] = useState(false)
   const [isShowBurger, setIsShowBurger] = useState(false)
+  const menuRef = useRef<HTMLUListElement>(null)
+  useEffect(() => {
+    menuRef.current?.addEventListener('mouseleave', () => {
+      setIsShow(false)
+    })
+    return () => {
+      menuRef.current?.removeEventListener('mouseleave', () => {
+        setIsShow(false)
+      })
+    }
+  }, [isShow])
   return (
     <nav className='ml-auto flex flex-col md:flex-row items-end md:items-center justify-center px-4 w-full'>
       <button className='flex md:hidden'
@@ -54,7 +65,7 @@ const NavBar = () => {
                   </div>
                   {
                     isShow && (
-                      <ul className='absolute flex flex-col z-10 bg-primary px-2 py-4 gap-3'>
+                      <ul ref={menuRef} className='absolute flex flex-col z-10 bg-primary px-2 py-4 gap-3'>
                         {
                           Object.entries(valMainObj).map((subItem) => {
                             const [keyObj, valObj] = subItem
