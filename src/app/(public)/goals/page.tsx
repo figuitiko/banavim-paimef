@@ -1,5 +1,10 @@
 import Disclaimer from '@/components/share/common/Disclaimer'
 import { APP_MESSAGES } from '@/constants'
+import { type Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Banavim - Objetivos del programa'
+}
 
 const goals = () => {
   return (

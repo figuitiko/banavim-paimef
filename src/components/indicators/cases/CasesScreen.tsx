@@ -24,7 +24,7 @@ const CasesScreen = ({ year = '2020' }: { year?: string }) => {
         variants={fadeIn('left', 'tween', 0.2, 1)}
         initial='hidden'
         whileInView='show'
-        viewport={{ once: true, amount: 0.25 }} className='flex max-w-[200px] fixed right-0 top-[50vh]'>
+        viewport={{ once: true, amount: 0.25 }} className='flex max-w-[200px] fixed right-0 top-[50vh] z-9'>
         <SelectYears />
       </MotionDiv>
       <section>

@@ -14,7 +14,6 @@ const useOndrop = (upLoadType: TuploaderItem) => {
           handleOnDropAgressorsServer(resultFromFiles as Agressor[])
         }
         if (upLoadType === 'cases') {
-          console.log('cases')
           handleOnDropCase(resultFromFiles as ViolenceCase[])
         }
         if (upLoadType === 'orders') {

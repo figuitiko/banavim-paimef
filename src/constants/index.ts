@@ -462,3 +462,51 @@ export const COOR_MAPS = [
   ['45%', '42%'],
   ['63%', '59.5%']
 ] as const
+
+export const COOR_MAP_OBJ = {
+  Ocampo: ['29%', '13%'],
+  'Pueblo Nuevo': ['34%', '65%'],
+  Hidalgo: ['49%', '23%'],
+  'San Juan de Guadalupe': ['84%', '45%'],
+  Tepehuanes: ['28%', '31%'],
+  Lerdo: ['66%', '30%'],
+  Nazas: ['62%', '35%'],
+  Durango: ['47%', '57%'],
+  Tamazula: ['21%', '48%'],
+  'Santa Clara': ['72%', '47%'],
+  Poanas: ['62%', '56%'],
+  'Coneto de Comonfort': ['49%', '39%'],
+  Topia: ['18%', '34%'],
+  Mezquital: ['53%', '74%'],
+  'Vicente Guerrero': ['63%', '59.5%'],
+  'Santiago Papasquiaro': ['38%', '39%'],
+  Cuencamé: ['66%', '47%'],
+  'Nombre de Dios': ['58%', '58.5%'],
+  'Guadalupe Victoria': ['60%', '48%'],
+  'San Juan del Río': ['55%', '43%'],
+  'El Oro': ['40%', '29%'],
+  Tlahualilo: ['70%', '21%'],
+  'San Bernardo': ['35%', '20%'],
+  Canelas: ['19%', '37%'],
+  'Peñón Blanco': ['60%', '42%'],
+  'Gómez Palacio': ['71%', '29%'],
+  'San Pedro del Gallo': ['56%', '30%'],
+  'General Simón Bolívar': ['76%', '44%'],
+  Rodeo: ['53%', '36%'],
+  Canatlán: ['48%', '47%'],
+  Guanaceví: ['26%', '20%'],
+  'San Dimas': ['31%', '50%'],
+  'San Luis del Cordero': ['57%', '34%'],
+  'Pánuco de Coronado': ['55%', '48%'],
+  Mapimí: ['60%', '21%'],
+  Otáez: ['31%', '43%'],
+  'Nuevo Ideal': ['45%', '41%']
+}
+
+export const INDICATORS_MAPPER = {
+  cases: 'Casos de violencia',
+  agressors: 'Perfil de los agresores',
+  victims: 'Perfil de las Victimas',
+  services: 'Servicios de atención otorgados',
+  orders: 'Órdenes de protección capturadas'
+} as const

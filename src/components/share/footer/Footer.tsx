@@ -11,8 +11,8 @@ const Footer = () => {
       </div>
       <div className='flex flex-col items-center w-full'>
         <span className='capitalize mb-2'>enlaces</span>
-        <a href='#' className='underline text-[12px] capitalize'>Portal Durango</a>
-        <a href='#' className='underline text-[12px] capitalize' >Fiscalia del Estado de Durango</a>
+        <a href='https://www.durango.gob.mx/' className='underline text-[12px] capitalize'>Gobierno Del Estado De Durango</a>
+        <a href='https://iemujer.durango.gob.mx/' className='underline text-[12px] capitalize' >Instituto Estatal De Las Mujeres Durango</a>
       </div>
     </footer>
   )

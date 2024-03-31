@@ -1,8 +1,13 @@
 import TooltipLocator from '@/components/geo/TooltipLocator'
 import Disclaimer from '@/components/share/common/Disclaimer'
-import { APP_MESSAGES, COOR_MAPS } from '@/constants'
+import { APP_MESSAGES, COOR_MAP_OBJ } from '@/constants'
 import { getVictimsByMunicipality } from '@/lib/fetchers/victims'
 import Image from 'next/image'
+import { type Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Banavim - Georeferencia'
+}
 const Georeferenced = async () => {
   const casesByMun = await getVictimsByMunicipality()
   return (
@@ -13,10 +18,10 @@ const Georeferenced = async () => {
             Object.keys(casesByMun as Record<string, number>).map((mun, index) => {
               return (
                 <TooltipLocator
-                  key={index}
+                  key={mun}
                   tooltipContent={`Número de casos de ${mun}: ${casesByMun?.[mun]}`}
-                  left={COOR_MAPS[index][0]}
-                  top={COOR_MAPS[index][1]}
+                  left={COOR_MAP_OBJ[mun as keyof typeof COOR_MAP_OBJ]?.[0]}
+                  top={COOR_MAP_OBJ[mun as keyof typeof COOR_MAP_OBJ]?.[1]}
                   delay={Number(`0.${index}`)} />
               )
             })

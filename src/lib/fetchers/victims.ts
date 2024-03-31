@@ -130,7 +130,6 @@ export const getVictimsByAmountAgressors = async () => {
         amountAgressors: true
       }
     })
-    console.log(result)
     return result.reduce<Record<string, number>>((acc, curr) => {
       if (curr.amountAgressors === undefined || curr._count === undefined || curr.amountAgressors === null || curr.amountAgressors === 0) return acc
       acc[curr.amountAgressors] = Number(curr._count.amountAgressors)
