@@ -38,6 +38,7 @@ export const createViolenceCaseRecords = async (data: ViolenceCase[]) => {
   try {
     await prisma.$transaction(
       [
+        prisma.violenceCase.deleteMany({ where: {} }),
         prisma.violenceCase.createMany({ data })
       ]
     )

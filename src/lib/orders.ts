@@ -35,6 +35,7 @@ export const createOrderRecords = async (data: Order[]) => {
   try {
     await prisma.$transaction(
       [
+        prisma.order.deleteMany({ where: {} }),
         prisma.order.createMany({ data })
       ]
     )

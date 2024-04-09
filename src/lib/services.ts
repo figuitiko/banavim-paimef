@@ -28,6 +28,7 @@ export const createServiceRecords = async (data: Service[]) => {
   try {
     await prisma.$transaction(
       [
+        prisma.service.deleteMany({ where: {} }),
         prisma.service.createMany({ data })
       ]
     )
