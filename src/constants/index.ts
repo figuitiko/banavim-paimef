@@ -1,3 +1,4 @@
+import { login } from '@/app/auth/auth'
 import { type AccordionComponentProps, type KpiItem } from '@/types'
 
 export const COLORS = {
@@ -509,4 +510,10 @@ export const INDICATORS_MAPPER = {
   victims: 'Perfil de las Victimas',
   services: 'Servicios de atención otorgados',
   orders: 'Órdenes de protección capturadas'
+} as const
+
+export const  LOGIN_FORM = {
+  emailInput: 'Entre correo electrónico',
+  passwordInput: 'Entre su contraseña',
+  loginButton: 'Iniciar Sesión'
 } as const

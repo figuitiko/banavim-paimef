@@ -1,7 +1,6 @@
-import { PrismaClient } from '@prisma/client'
+"use server";
 import bcrypt from 'bcrypt'
-
-const prisma = new PrismaClient()
+import { prisma } from './util'
 
 export const seed = async () => {
   const existingUser = await prisma.user.findUnique({
@@ -11,7 +10,6 @@ export const seed = async () => {
   })
 
   if (existingUser !== null) {
-    console.log('User already exists')
     return existingUser
   }
   const password = await bcrypt.hash('zaq123', 10)
@@ -24,3 +22,8 @@ export const seed = async () => {
   })
   return user
 }
+seed().then((user) => {
+  process.exit(0)
+}).catch((error) => {
+  process.exit(1)
+})

@@ -16,16 +16,28 @@ const SelectYears = () => {
     }
     replace(`${pathname}?${params.toString()}`)
   }
+  const currentYear = new Date().getFullYear()
+  const years = Array.from({ length: currentYear - 2019 }, (_, index) => (currentYear - index).toString())
+
   return (
-    <div className='flex flex-col bg-primary p-4 rounded-lg'>
+    <div className="flex flex-col bg-primary p-4 rounded-lg">
       <div className="mb-2 block text-white">
         <Label htmlFor="countries" value="Selecciona un año" />
       </div>
-      <Select className='rounded-lg' name='years' id='years' onChange={(e) => { handleYear(e.target.value) }} defaultValue={searchParams.get('year')?.toString() ?? '2020'}>
-        <option value='2020'>2020</option>
-        <option value='2021'>2021</option>
-        <option value='2022'>2022</option>
-        <option value='2023'>2023</option>
+      <Select
+        className="rounded-lg"
+        name="years"
+        id="years"
+        onChange={(e) => {
+          handleYear(e.target.value)
+        }}
+        defaultValue={searchParams.get('year')?.toString() ?? '2020'}
+      >
+        {years.map((year) => (
+          <option key={year} value={year}>
+            {year}
+          </option>
+        ))}
       </Select>
     </div>
   )

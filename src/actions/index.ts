@@ -20,3 +20,4 @@ export const handleOnDropOrders = async (data: Order[]) => {
 export const handleOnDropServices = async (data: Service[]) => {
   createServiceRecords(data)
 }
+

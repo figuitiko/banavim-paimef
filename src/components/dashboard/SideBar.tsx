@@ -1,14 +1,13 @@
+import { getUser } from '@/app/auth/dal'
 import BoxUserInfo from './BoxUserInfo'
 import MenuOptions from './MenuOptions'
-import { type Session, getServerSession } from 'next-auth'
+// import { type Session, getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
+import { User } from '@prisma/client'
 
-const SideBar = async () => {
-  const session = await getServerSession()
-  if (session === null) {
-    redirect('/auth/signin')
-  }
-  const { user } = session as unknown as { user: Session }
+const SideBar = async ({user}: {user: User}) => {
+  
+  
   const { name, email } = user as unknown as { name: string, email: string }
 
   return (

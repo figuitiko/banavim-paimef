@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import LogoutButton from './logout-btn'
 
 const MenuOptions = () => {
   return (
@@ -16,6 +17,9 @@ const MenuOptions = () => {
         </li>
         <li>
           <Link href={'/dashboard/services'}>Servicios</Link>
+        </li>
+        <li>
+           <LogoutButton />
         </li>
       </ul>
     </nav>
